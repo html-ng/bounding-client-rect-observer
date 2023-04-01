@@ -1,0 +1,20 @@
+{
+  "name": "@html-ng/bounding-client-rect-observer",
+  "version": "0.1.0",
+  "description": "A polyfill for the `BoundingClientRectObserver`",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "prepublishOnly": "npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/html-ng/bounding-client-rect-observer.git"
+  },
+  "author": "Jakub Trzebiatowski <cubuspl42@gmail.com>",
+  "license": "Apache-2.0",
+  "devDependencies": {
+    "typescript": "^5.0.3"
+  }
+}
