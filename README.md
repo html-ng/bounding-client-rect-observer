@@ -74,8 +74,8 @@ elementsToObserve.forEach((element) => {
 An object representing a single notification entry for an observed element when its bounding client rect changes. Properties:
 
 - `target: Element`: The observed element whose bounding client rect has changed.
-- `previousBounds: DOMRect`: The previous bounding client rect of the element before the change.
-- `newBounds: DOMRect`: The new bounding client rect of the element after the change.
+- `previousBounds: DOMRectReadOnly`: The previous bounding client rect of the element before the change.
+- `newBounds: DOMRectReadOnly`: The new bounding client rect of the element after the change.
 
 ### `BoundingClientRectObserverCallback`
 

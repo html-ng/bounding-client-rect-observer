@@ -4,9 +4,9 @@ import {observeBounds} from "./observeBounds";
 interface BoundingClientRectEntry {
     readonly target: Element;
 
-    readonly previousBounds: DOMRect;
+    readonly previousBounds: DOMRectReadOnly;
 
-    readonly newBounds: DOMRect;
+    readonly newBounds: DOMRectReadOnly;
 }
 
 type BoundingClientRectObserverCallback = (

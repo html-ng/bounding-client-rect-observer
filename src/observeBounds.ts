@@ -6,8 +6,8 @@ import {Handle, HandleUtils} from "./handle";
 export function observeBounds(
     element: Element,
     callback: (args: {
-        previousBounds: DOMRect,
-        newBounds: DOMRect,
+        previousBounds: DOMRectReadOnly,
+        newBounds: DOMRectReadOnly,
     }) => void,
 ): Handle {
     let previousBounds = element.getBoundingClientRect();
