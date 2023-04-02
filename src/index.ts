@@ -41,7 +41,7 @@ export class BoundingClientRectObserver {
         this._handles.clear();
     }
 
-    _startObserving(element: Element) {
+    private _startObserving(element: Element) {
         const newHandle = observeBounds(
             element,
             (args) => {
@@ -58,7 +58,7 @@ export class BoundingClientRectObserver {
         this._handles.set(element, newHandle);
     }
 
-    _isObserved(element: Element): boolean {
+    private _isObserved(element: Element): boolean {
         return this._handles.has(element);
     }
 }
