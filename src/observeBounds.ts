@@ -1,7 +1,9 @@
 import {Handle, HandleUtils} from "./handle";
 
 /**
- * Observe element's bounds using a best-effort approach
+ * Observe changes to the bounding client rect of an element using a best-effort approach.
+ *
+ * @returns a handle that allows canceling the observation
  */
 export function observeBounds(
     element: Element,
@@ -45,7 +47,11 @@ export function observeBounds(
 }
 
 /**
- * Observe _potential_ layout changes in the given element
+ * Observe layout changes that could potentially affect the given element's bounds.
+ * This function sets up observation for style changes, parent's size changes, scroll events, and recursively observes
+ * ancestors for layout changes as well.
+ *
+ * @return a handle that can be used to cancel the observation.
  */
 function observeLayout(
     element: Element,

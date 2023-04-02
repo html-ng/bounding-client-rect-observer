@@ -1,3 +1,6 @@
+/**
+ * Interface representing a handle that can be used to cancel an ongoing operation or observation.
+ */
 export interface Handle {
     cancel(): void;
 }

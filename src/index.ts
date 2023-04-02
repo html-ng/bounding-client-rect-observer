@@ -14,6 +14,9 @@ type BoundingClientRectObserverCallback = (
     observer: BoundingClientRectObserver,
 ) => void;
 
+/**
+ * Class representing an observer that can be used to monitor changes in the bounding client rect of multiple elements.
+ */
 export class BoundingClientRectObserver {
     private readonly _callback: BoundingClientRectObserverCallback;
 
@@ -25,6 +28,11 @@ export class BoundingClientRectObserver {
         this._callback = callback;
     }
 
+    /**
+     * Start observing changes in the bounding client rect of the given element.
+     *
+     * @param element - the element to observe
+     */
     observe(element: Element) {
         if (this._isObserved(element)) {
             return;
@@ -33,6 +41,9 @@ export class BoundingClientRectObserver {
         this._startObserving(element);
     }
 
+    /**
+     * Stop observing all elements
+     */
     disconnect() {
         this._handles.forEach((handle) => {
             handle.cancel();
