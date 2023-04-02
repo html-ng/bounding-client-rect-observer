@@ -15,7 +15,7 @@ export function observeBounds(
     const process = () => {
         const newBounds = element.getBoundingClientRect();
 
-        if (newBounds !== previousBounds) {
+        if (!rectEquals(newBounds, previousBounds)) {
             callback({
                 previousBounds,
                 newBounds,
@@ -98,4 +98,8 @@ function observeScroll(
             element.removeEventListener('scroll', callback);
         }
     }
+}
+
+function rectEquals(a: DOMRectReadOnly, b: DOMRectReadOnly): boolean {
+    return a.x === b.x && a.y === b.y && a.width === b.width && a.height === b.height;
 }
