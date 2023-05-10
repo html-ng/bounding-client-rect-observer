@@ -97,7 +97,9 @@ function observeScroll(
     element: Element,
     callback: () => void,
 ): Handle {
-    element.addEventListener('scroll', callback);
+    element.addEventListener('scroll', callback, {
+        passive: true,
+    });
 
     return {
         cancel() {
